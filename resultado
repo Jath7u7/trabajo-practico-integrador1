@@ -1,0 +1,4 @@
+package pronosticos;
+
+public enum EnumResultado {
+	GANADOR,PERDEDOR,EMPATE }
