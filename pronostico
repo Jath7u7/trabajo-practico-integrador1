@@ -1,0 +1,30 @@
+package pronosticos;
+
+public class Equipo{
+	
+	private String nombre;
+	private String descripcion;
+	public String getNombre() {
+		return nombre;
+	}
+	public Equipo( String nombre) {
+		super();
+		this.nombre = nombre;
+			
+		// TODO Auto-generated constructor stub
+	}
+	public void setNombre(String argentina) {
+		this.nombre = argentina;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = "seleccion nacional";
+	}
+	
+	
+	
+		
+
+}
