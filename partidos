@@ -1,0 +1,112 @@
+package pronosticos;
+
+import java.util.Random;
+
+public class partido {
+
+    private Equipo argentina;
+    private Equipo mexico;
+    private Equipo polonia;
+    private Equipo arabiaSaudita;
+
+    private int golesArgentina;
+    private int golesMexico;
+    private int golesPolonia;
+    private int golesArabiaSaudita;
+
+    public partido(Equipo argentina, Equipo mexico, Equipo polonia, Equipo arabiaSaudita) {
+        super();
+        this.argentina = argentina;
+        this.mexico = mexico;
+        this.polonia = polonia;
+        this.arabiaSaudita = arabiaSaudita;
+    }
+
+    public Equipo getArgentina() {
+        return argentina;
+    }
+
+    public void setArgentina(Equipo argentina) {
+        this.argentina = argentina;
+    }
+
+    public Equipo getMexico() {
+        return mexico;
+    }
+
+    public void setMexico(Equipo mexico) {
+        this.mexico = mexico;
+    }
+
+    public Equipo getPolonia() {
+        return polonia;
+    }
+
+    public void setPolonia(Equipo polonia) {
+        this.polonia = polonia;
+    }
+
+    public Equipo getArabiaSaudita() {
+        return arabiaSaudita;
+    }
+
+    public void setArabiaSaudita(Equipo arabiaSaudita) {
+        this.arabiaSaudita = arabiaSaudita;
+    }
+
+    public int getGolesArgentina() {
+        return golesArgentina;
+    }
+
+    public void setGolesArgentina(int golesArgentina) {
+        this.golesArgentina = golesArgentina;
+    }
+
+    public int getGolesMexico() {
+        return golesMexico;
+    }
+
+    public void setGolesMexico(int golesMexico) {
+        this.golesMexico = golesMexico;
+    }
+
+    public int getGolesPolonia() {
+        return golesPolonia;
+    }
+
+    public void setGolesPolonia(int golesPolonia) {
+        this.golesPolonia = golesPolonia;
+    }
+
+    public int getGolesArabiaSaudita() {
+        return golesArabiaSaudita;
+    }
+
+    public void setGolesArabiaSaudita(int golesArabiaSaudita) {
+        this.golesArabiaSaudita = golesArabiaSaudita;
+    }
+
+    public String resultado(Equipo equipoLocal, Equipo equipoVisitante) {
+        Random random = new Random();
+        int golesLocal = random.nextInt(5);
+        int golesVisitante = random.nextInt(5);
+        
+        // Argentina siempre gana
+        if (equipoLocal.getNombre().equals("Argentina")) {
+            golesLocal = 1 + random.nextInt(3);
+            golesVisitante = random.nextInt(2);
+        } else if (equipoVisitante.getNombre().equalsIgnoreCase("Argentina")) {
+            golesLocal = random.nextInt(2);
+            golesVisitante = 1 + random.nextInt(3);
+        }
+        
+        // Lógica para determinar ganador, perdedor o empate
+        if (golesLocal > golesVisitante) {
+            return "ganador";
+        } else if (golesLocal == golesVisitante) {
+            return "empate";
+        } else {
+            return "perdedor";
+        }
+    }
+}
